@@ -232,7 +232,7 @@ There comes a certain point in every new developers journey where they need to m
 
 ## Tasks
 
-There are two tasks and one optional practice assignment to refresh the basics of pandas and sklearn for this session. You will find details in each file. To start, fork this repo. 
+There are two tasks and one optional practice assignment to refresh the basics of pandas and sklearn for this session. You will find details in each file. To start, clone this repo. 
 1. [Unix-Conda-Pip](nb/unix-conda-pip.ipynb). 
 2. [GitHub](md/git-more.md)
 3. (Optional)[Pandas-Sklearn-Basics](pandas-sklearn-basics/pandas-sklearn-basics.ipynb)
