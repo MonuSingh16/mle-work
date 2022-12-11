@@ -129,4 +129,8 @@ dmypy.json
 .pyre/
 
 # Mac OS
+<<<<<<< HEAD
 .DS_STORE
+=======
+.DS_STORE
+>>>>>>> mle11-assignment
