@@ -4,9 +4,10 @@ from typing import List
 from transformers import pipeline
 
 app = FastAPI()
+
 pipeline = pipeline(
     "translation_en_to_de",
-    model="model/local_translation"
+     model = "model/local_translation"
 )
 
 class TextToTranslate(BaseModel):
