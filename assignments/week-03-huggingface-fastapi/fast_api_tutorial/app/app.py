@@ -12,6 +12,10 @@ pipeline = pipeline(
 class TextToTranslate(BaseModel):
     input_text: str
 
+class TextsToTranslate(BaseModel):
+    input_texts: List[str]
+
+
 @app.get("/")
 def index():
     return {"message": "Hello World"}
@@ -27,6 +31,10 @@ def echo(text_to_translate: TextToTranslate):
 @app.post("/translate")
 def translate(text_to_translate: TextToTranslate):
     return {"message": pipeline(text_to_translate.input_text)}
+
+@app.post("/list_translate")
+def translate(text_to_translate: TextsToTranslate):
+    return {"message": pipeline(text_to_translate.input_texts)}
 
 if __name__ == "__main__":
     import uvicorn
