@@ -131,6 +131,3 @@ dmypy.json
 # Mac OS
 .DS_STORE
 .DS_STORE
-
-# Model
-model/
