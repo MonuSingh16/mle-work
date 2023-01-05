@@ -127,7 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+<<<<<<< HEAD
 
 # Mac OS
 .DS_STORE
 .DS_STORE
+=======
+<<<<<<< HEAD
+
+# Mac OS
+.DS_STORE
+=======
+>>>>>>> 246ef8a5e00ef3fdec5d8736d02d9e066943f171
+>>>>>>> mle11-assignment
