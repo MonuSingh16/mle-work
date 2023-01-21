@@ -7,3 +7,5 @@ scikit_learn==1.1.1
 seaborn==0.11.2
 shap
 streamlit==1.11.1
+pandas-profiling
+tpot
