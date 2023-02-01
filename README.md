@@ -7,7 +7,7 @@
 
 # <h1 align="center" id="heading">:wave: Welcome to MLE Cohort 11 (December 2022)!</h1>
 
-Welcome to MLE! :tada: Follow steps in [software-dev-for-mlops-101](https://github.com/FourthBrain/software-dev-for-mlops-101) to get started on your environment setup! 
+### Welcome to MLE! :tada: Follow steps in [software-dev-for-mlops-101](https://github.com/FourthBrain/software-dev-for-mlops-101) to get started on your environment setup! 
 
 
-### That's it for now!  And so it begins.... :)
+#### That's it for now!  And so it begins.... :)
