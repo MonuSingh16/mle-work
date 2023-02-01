@@ -1,0 +1,71 @@
+=====================
+Q1. Is SVM (Support Vector Machine) a supervised or unsupervised learning algorithm?
+    Why is SVM such a powerful classification method? What are 3 disadvantages of SVMs?
+A1. SVM is supervised ML model. 
+
+    SVM is a powerful classification method because it performs well when we do not know much about the data, 
+    It gives a clear margin of separation, It is highly effective in high dimensional spaces.
+    It is also memory efficient as it uses subset of traing data points in decision function
+
+    It has following drwabacks, First, it does not perform well, when we have a large data, 
+    Second,  when we have large noise in data, which means that target classes overlaps. 
+    Third, Choosing an optimal kernel and parameters can be expensive. 
+
+=====================
+Q2. What is the time complexity of SVM? What is it for Logistic Regression?
+A2. The time complexity for an SVM is O(n^2) for training time complexity. 
+    The run-time complexity is O(k*d), where k is the number of support
+    vectors and d is the dimensionality of the data. 
+   
+    The time complexity for Logistic Regression is O(n*d) for training time
+    complexity, where n is the number of training examples and d is the number 
+    of dimensions of the data (feature count). Space complexity is O(d).
+
+=====================
+Q3. Explain feature importance for the Random Forest algorithm? 
+    When examining feature importance, what is Gini impurity or information gain?
+A3. Feature importance is calculated as the decrease in node impurity 
+    (where node impurity is the measure of homogeneity of the labels at
+    the node in question) weighted by the probability of reaching that node. 
+    The node probability can be calculated by the number of samples that reach
+    the node divided by the total number of samples. The higher the value the
+    more important the feature.  
+
+    Gini impurity is used to predict the likelihood that a randomly selected
+    example would be incorrectly classified by a specific node. A Gini impurity of
+    0 says that all elements belong to a single class. A Gini impurity of 1 says
+    that all elements are randomly distributed over various classes. A Gini 
+    impurity of 0.5 says that all elements are uniformly distributed across the
+    classes. 
+
+    Information gain is the process of selecting the best features to provide
+    the most information about a class. It does this by attempting to reduce
+    the entrophy from the root node to the leaf nodes. Specifically at a node, 
+    the difference in entropy is measured before and after splitting and the 
+    information gain is recorded like so: information gain = 1 - entropy, where
+    entropy is the measure of a random variable's uncertainty or roughly speaking
+    how much variance the data has. Essentially, Information gain is how much 
+    entropy we removed. Aka higher informatiion gain == more entropy removed ==
+    better quality/useful split at that node. 
+
+=====================
+Q4. SHAP (SHapley Additive exPlanations) is a game theoretic approach to explain the output of any machine learning model,
+    what is it and how does it work?
+A4. SHAP is an approach to explain models via coalitional game theory, which tells
+   us how to fairly distribute the "payout" among features for a prediction.
+
+   It works by assigning each feature a contribution
+   to a specific instance's prediction and then using each feature's contribution 
+   to explain the difference between the average prediction and the specific 
+   instance's prediction. The feature with the most contributions, or profit, 
+   has more importance. Additionally, features can work together in 'coalitions'
+   to contribute more.
+   
+   Taken all feature contributions together, this is called 
+   the 'Shapley values' for a model. Of note, the shapley value is NOT the 
+   the difference in prediction if we would remove that feature from the model. 
+   To reiterate, Shapley values is the average contribution of a feature value 
+   to the prediction in different coalition.
+
+=====================
+
