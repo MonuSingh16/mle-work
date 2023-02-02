@@ -1,0 +1,93 @@
+Q: What is Normalization?
+A: It is also known as Min-Max Scaling [0,1], It is a way to scale the features 
+   by forcing values in the range specified [0,1]
+
+Q: How does Normalization make training a model more stable?
+A: As some algorithms are sensitive to feature scaling. Ex- 
+   Gradient Descent Based algorithms have an optimizer function 
+   that utilizes data X. If that is not scaled, there will be 
+   different step sizes for each feature and some features may not
+   move smoothly towards a minima. By scaling, Gradient Descent will
+   converge more quickly since the step sizes for each features are
+   similar. Distance Based algorithms are sensitive to the range of
+   the features because they are using distances between data points
+   to determine a similarity. Therefore if features have ranges of 
+   different scales, there is a chance that a higher weight will be
+   given to features with higher magnitudes and possibly make the 
+   algorithm biased towards one feature. Once the features are 
+   scaled, all features have an equal chance to contribute to the 
+   final model result.
+
+Q: What are loss and optimizer functions and how do they work?
+A: The loss function measures how wrong the model is or simply
+   put allows us to understand the difference between our predicted
+   values and the actual values. It is also sometimes called the 
+   'cost' function, since it is the cost incurred by your model 
+   for being wrong. It's inputs are the weights of the model and
+   the outputs are the cost/loss associated with the predictions
+   those weights came with it as compared to the actual values. 
+   The actual equation will change per model but somewhere the 
+   difference between the predict and actual value occurs. 
+   The goal is to lower the loss/cost as much as possible and thus
+   measuring the loss/cost allows us to understand how well our
+   model is performing and whether it is improving. 
+
+   The optimizer function is used to minimize an error function (cost/loss)
+   or put another way to update the learnable parameters of a model to reduce 
+   the cost/loss of the model. This is done by taking into acccount a 
+   learning rate and the loss function mentioned above. Generally, the new weights 
+   are assigned as follows. New weights = old weights - learning rate(loss function). 
+   This changes the learnable parameters of a model.
+
+Q: What is Gradient Descent and how does it work?
+A: Gradient Descent is an iterative optimization algorithm to find the global 
+   minima of a cost/loss function. It assumes the loss function is convex in shape
+   and it assumes 1 global minima. Multiple minimas may lead to a sub-optimal
+   result if Gradient Descent gets caught in a local minima. 
+
+   Gradient Descent works off of the intuition that moving in the direction 
+   oppposite of the steepest ascent will find you a minima, ideally a global one.
+   It does this by calculating a gradient or partial derivative of the loss 
+   function with respect to the the learnable parameter (eg. weights, bias, etc).
+   It then plugs this into an optimizer function, specifically the mention of
+   loss function) to update the learnable parameter of interest. The newly
+   calculated learnable parameters will then undergo another iteration of
+   the above. Iterations continue until the model has converged and found a 
+   minima loss/cost, which represents the lowest error rate that model can 
+   achieve, assuming this is a global minima. Mathematically this is known as 
+   a gradient(loss function) of 0. We can influence how quickly we reach this
+   by setting a learning rate, which effects how large of a change we allow when
+   updating our learnable paramters.
+
+Q: What is an activation function?
+A: In artificial neural networks, an activation function  defines the output of
+   a node given the nodes calculations so far. It can be defined as 
+   lowercase sigma(z), where z is some linear fxn (in linear regression that would
+   be like y=wx+b). This activation function allows you to define the values the 
+   output will take and introduce some nonlinearity in the process as well.   
+
+Q: What are the outputs of the following activation functions: 
+   ReLU, Softmax Tanh, Sigmoid ?
+A: ReLU outputs are from 0 to z, where z is the input to the ReLU function
+   Softmax outputs are a vector v with probabilities for each possible outcome, 
+   where all the probabilities added up equal 1. 
+   Tanh outputs range from -1 to 1 and is centered around zero.
+   Sigmoid outputs range from 0 to 1 and its output is NOT centered around zero
+
+Q: What is the TPOT algorithm and how does it work??
+A: TPOT is a python automated machine learning tool that explores many possible 
+   ML pipelines to find the best one for your data and returns the python code
+   for the best pipeline to tinker with further. This automates a lot of the 
+   tedious work of machine learning. It 
+   works by generally using 'genetic programming' to search for the best pipeline
+   and even explores the hyper parameter space for you already. 
+   
+   'Genetic Programming' is a technique by which models evolve over time to gradually find 
+   the optimal solution. Specifically, it uses 'Genetic Programming stochastic 
+   global search procedure' on model pipelines respresented as trees. Put more
+   simply, TPOT generates many possible pipelines automatically and
+   uses them to find the best parameters. It then explores all machine learning
+   pipelines and parameters and only uses the ones with the best results.
+   
+Q: What does TPOT stand for??
+A: Tree-based Pipeline Optimization Tool. 
