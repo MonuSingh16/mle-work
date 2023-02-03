@@ -11,6 +11,7 @@ from PIL import Image
 img_fuel = Image.open("../img/fuel_efficiency.png")
 st.image(img_fuel, width=700)
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.markdown("<h1 style='text-align: center; color: black;'>Fuel Efficiency</h1>", unsafe_allow_html=True)
 
 # Import train dataset to DataFrame
@@ -94,6 +95,8 @@ with tab3:
     st.subheader('Model Interpretability - TPOT Extra Trees Regressor') 
     fig = shap.summary_plot(tpot_shap)
     st.pyplot(fig) 
-    st.write(""" In this chart we see the explainability for TPOTs top model, the Extra Trees Regressor. To decode the features use this: (0, 'Cylinders'), (1, 'Displacement'), (2, 'Horsepower'), (3, 'Weight'), (4, 'Acceleration'), (5, 'Model Year'), (6, 'Europe'), (7, 'Japan'), (8, 'USA') 
+    st.write(""" In this chart we see the explainability for TPOTs top model, the Extra Trees Regressor. 
+    To decode the features use this: (0, 'Cylinders'), (1, 'Displacement'), (2, 'Horsepower'), (3, 'Weight'),
+     (4, 'Acceleration'), (5, 'Model Year'), (6, 'Europe'), (7, 'Japan'), (8, 'USA') 
 """)
     
