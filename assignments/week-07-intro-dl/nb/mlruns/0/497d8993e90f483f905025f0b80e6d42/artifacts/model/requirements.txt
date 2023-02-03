@@ -1,0 +1,8 @@
+mlflow<3,>=2.1
+cffi==1.15.1
+defusedxml==0.7.1
+pandas==1.4.3
+pillow==9.4.0
+scipy==1.9.3
+tensorflow-macos==2.11.0
+tensorflow==2.11.0

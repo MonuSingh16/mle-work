@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/monusingh/python-work/mle-work/mle-assignments/mle-work/assignments/week-07-intro-dl/nb/mlruns/0/497d8993e90f483f905025f0b80e6d42/artifacts
+end_time: 1675407206505
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 497d8993e90f483f905025f0b80e6d42
+run_name: carefree-mule-717
+run_uuid: 497d8993e90f483f905025f0b80e6d42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675407197165
+status: 3
+tags: []
+user_id: monusingh
