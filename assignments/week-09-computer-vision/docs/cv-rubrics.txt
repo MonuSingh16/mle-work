@@ -1,0 +1,90 @@
+Q1: How does Transfer Learning work? When to use Transfer Learning?
+
+A1: Transfer learning takes a pre-existing already trained network, removes the last layer  
+and trains a new final layer using our own dataset to 'fine tune' the network to our more
+specific use case. In this way, we leverage a much larger, already existing network and 
+pair it with layer(s) of our own which utilize our own data instead. 
+Transfer learning works by leveraging a larger pre-trained model, striping off at least the final layer, 
+and then replacing it with our own trained final layer. 
+
+We use transfer learning when we want to speed up the training of 
+our network and there is an already existing network trained on 
+lots of data. Suppose, we have a small dataset of our own and can not build such a large network ourselves.
+
+=====Interview Readiness=====
+Q: When training a Convolution Neural Network in the parameters what do each 
+of the letters mean, for example NHWC?
+A:
+	N= Batch Size
+Input Tensor
+	C= Number of Channels
+	H= Height
+	W= Width
+Output Tensor
+	K= Number of Channels
+	P= Height
+	Q= Width
+Filter
+	R= Height
+	S= Width
+	U= Vertical Stride
+	V= Horizontal Stride
+	PadH= Input padding in the vertical dimension
+	PadW= Input padding in the horizontal dimension
+	DilH= Dilation in the vertical dimension
+	DilW= Dilation in the horizontal dimension
+
+Q: How does an SSD (single shot multi box detector) object detection model work?
+
+A: 
+
+From the paper - 
+https://arxiv.org/pdf/1512.02325.pdf
+
+The SSD approach is based on a feed-forward convolutional network that produces a fixed-size collection of 
+bounding boxes and scores for the presence of object class instances in those boxes, 
+followed by a non-maximum suppression step to produce the final detections
+
+SSD  uses a single forward pass of the network to achieve object localization
+(via multiple bounding boxes) and classification using a detector on the localized
+   objects. 
+
+Going more into the object localization portion, SSD uses a 'multibox loss' as 
+defined by multibox_loss = confidence_loss+(alpha*location_loss) where the alpha
+term helps us balance how much location loss contributes to the multibox loss. 
+
+The confidience loss is how confident the network is of having an object in its 
+   bounding box. The location loss measure how far away the network's predicted 
+   bounding box is from the ground truth. SSD starts the object localization by using
+   'priors' or pre-computed, fixed size bounding boxes that match the distribution 
+   of ground truch boxes such that the IOU is greater than .5. This gives SSD a better
+   start than simply random boxes. At the end, multibox only keeps the top K bounding
+   box predictions based on the multibox loss. 
+
+   Going more into the detector, SSD then performs object classification on each predicted
+   bounding box. A set of c class predictions are computers for every possible class in the
+   dataset. This gives us not only bounding boxes but class labels associated with them. 
+
+Q: What is Intersection over Union and why do we use Intersection over Union?
+
+A: 
+https://pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/
+The above link made the understanding very simple.
+
+Intersection over Union is the measure of overlap between 2 bounding boxes.
+   
+   It is defined as the 
+   (intersection area of 2 bounding boxes)
+   ---------------------------------------------------------------------------------------
+   (union area of the 2 bounding boxes - the intersection area of the 2 bounding boxes)
+
+   We minus the intersection area so it is not counted twice! Additionally, the values 
+   range from 0 to 1.
+
+   We use Intersection over Union because it provides us a means of measuring how well
+   the predicted bounding box is compared to ground truth and generally how well the
+   model is performing. 
+   
+If the IOU is greater than some human set threshold, say .5, we could say the predicted bounding box was correct.
+If a higher IOU is required, we could use that threshold instead and it enforces more accurate bounding boxes
+as a requirement.
