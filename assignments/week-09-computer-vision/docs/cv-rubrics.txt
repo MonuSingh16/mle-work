@@ -53,17 +53,18 @@ Going more into the object localization portion, SSD uses a 'multibox loss' as
 defined by multibox_loss = confidence_loss+(alpha*location_loss) where the alpha
 term helps us balance how much location loss contributes to the multibox loss. 
 
-The confidience loss is how confident the network is of having an object in its 
-   bounding box. The location loss measure how far away the network's predicted 
-   bounding box is from the ground truth. SSD starts the object localization by using
-   'priors' or pre-computed, fixed size bounding boxes that match the distribution 
-   of ground truch boxes such that the IOU is greater than .5. This gives SSD a better
-   start than simply random boxes. At the end, multibox only keeps the top K bounding
-   box predictions based on the multibox loss. 
+1. The confidience loss is how confident the network is of having an object in its 
+bounding box. 
 
-   Going more into the detector, SSD then performs object classification on each predicted
-   bounding box. A set of c class predictions are computers for every possible class in the
-   dataset. This gives us not only bounding boxes but class labels associated with them. 
+2. The location loss measure how far away the network's predicted bounding box is from the ground truth. 
+
+SSD starts the object localization by using 'priors' or pre-computed, fixed size bounding boxes that match the distribution 
+of ground truch boxes such that the IOU is greater than .5. This gives SSD a better start than simply random boxes. 
+At the end, multibox only keeps the top K bounding box predictions based on the multibox loss. 
+
+SSD then performs object classification on each predicted bounding box.
+A set of c class predictions are computers for every possible class in the
+dataset. This gives us not only bounding boxes but class labels associated with them. 
 
 Q: What is Intersection over Union and why do we use Intersection over Union?
 
