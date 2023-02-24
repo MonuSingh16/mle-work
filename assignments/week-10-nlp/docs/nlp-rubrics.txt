@@ -1,0 +1,94 @@
+Q: How does the Naive Bayes Classifier work?
+A: The algorithm is based on Bayes' theorem, which states that the probability of a hypothesis H given some evidence E 
+is proportional to the probability of the evidence given the hypothesis, multiplied by the prior probability of the hypothesis.
+
+The Naive Bayes Classifier assumes that the features in the input data are independent of each other, 
+hence the term "naive". This assumption simplifies the calculations and makes the algorithm more efficient, 
+but it may not always hold true in practice.
+
+The Naive Bayes Classifier works as follows:
+
+Data Preparation: The input data is prepared by extracting relevant features and transforming them into a numerical representation, 
+such as a bag-of-words or a term frequency-inverse document frequency (TF-IDF) matrix.
+
+Training: The algorithm then calculates the conditional probability of each feature given each class 
+label in the training data. This involves counting the number of times each feature appears in 
+each class, and dividing by the total number of features in that class.
+
+Prediction: To make a prediction on a new input, the algorithm calculates the posterior probability 
+of each class given the features in the input. This involves multiplying the conditional probabilities 
+of each feature in the input by the prior probability of the class, and then normalizing the result 
+so that the probabilities add up to one. The class with the highest probability is then chosen as the prediction.
+
+
+
+Q: What is Posterior Probability?
+A: Posterior Probability = Conditional probability*Prior Probability
+                           -----------------------------------------
+                                         Evidence
+
+   or put in words "What is the probability that a particular object(x)
+   belongs to class w given its observed feature values?"
+   Another way to write the above formula is the below: 
+   Posterior Probability P(w|x) = P(x|w)*P(w)
+                                  -----------     where | means "given" 
+                                      P(x)
+
+Q: What is the difference between stemming and lemmatization in NLP?
+A: Stemming is the process of reducing words to their base or root forms by removing the suffixes. 
+This process is done by applying a set of rules that strip off the common suffixes, such as -ed, -ing, -s, etc.
+The resulting stems may not be actual words, but they are used to represent the base form of a word.
+For example, the word "jumping" might be stemmed to "jump".
+
+Lemmatization, on the other hand, is the process of reducing words to their base or dictionary form,
+which is known as the lemma. Unlike stemming, lemmatization considers the context of the word and 
+its part of speech, and it applies morphological analysis to determine the correct lemma. 
+For example, the word "running" might be lemmatized to "run", while the word "better" might be lemmatized to "good".
+
+Q: What is Word2Vec and how does it work?
+# Chat GPT Answers
+A: Word2Vec is a popular algorithm for natural language processing that is used to create word embeddings, 
+which are vector representations of words in a high-dimensional space. The main idea behind Word2Vec is 
+to capture the meaning of words by analyzing the context in which they appear.
+
+The algorithm has two main architectures: Continuous Bag of Words (CBOW) and Skip-gram. 
+In CBOW, the model is trained to predict the target word based on the context words that surround it, 
+while in Skip-gram, the model is trained to predict the context words given a target word.
+
+In both architectures, the input to the model is a large corpus of text and the output is a 
+set of word embeddings, where each word is represented by a vector in a high-dimensional space. 
+These vectors can be used to perform various natural language processing tasks, such as language translation,
+ sentiment analysis, and named entity recognition.
+
+The process of creating word embeddings involves training a neural network to learn the relationships 
+between words in the text corpus. The network learns to adjust the weights of its connections between 
+the input and output layers so that it can predict the context words or target words accurately.
+During the training process, the model updates the weights of the connections between the input 
+and output layers so that the predicted word embeddings are as close as possible to the actual word embeddings.
+
+Once the training process is complete, the resulting word embeddings can be used to represent 
+the meaning of words in the text corpus. Similar words will have similar vector representations, 
+which means they will be close together in the high-dimensional space. Word2Vec has become an 
+essential tool in the field of natural language processing, as it allows computers to understand 
+the meaning of words in a way that is similar to how humans understand them.
+
+Q: When to use GRU over LSTM?
+# ChatGPT Answers
+A: GBoth Gated Recurrent Units (GRUs) and Long Short-Term Memory (LSTM) networks are popular types of 
+recurrent neural networks (RNNs) that are used for sequence modeling tasks. 
+While both models have similar capabilities and are used in many of the same applications, 
+there are some differences between them that may make one more suitable than the other depending on the task at hand.
+
+Here are some factors to consider when deciding whether to use GRUs or LSTMs: Model complexity: GRUs are simpler than LSTMs, 
+which makes them easier to train and faster to compute. This can be an advantage if you have limited computing resources or a large dataset.
+
+Size of the dataset: LSTMs can be better suited for larger datasets because they have a greater capacity 
+to store long-term dependencies than GRUs. If you have a smaller dataset, GRUs may be sufficient for your needs.
+
+Task requirements: If the task at hand involves processing long sequences with many time steps,
+such as natural language processing or speech recognition, LSTMs may be a better choice.
+On the other hand, if the task involves processing shorter sequences, such as image captioning or music generation, 
+GRUs may be a better choice.
+
+Memory usage: LSTMs use more memory than GRUs because they have more parameters.
+This means that if you have limited memory resources, GRUs may be a better choice.
