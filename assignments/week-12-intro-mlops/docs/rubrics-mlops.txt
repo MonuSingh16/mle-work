@@ -1,0 +1,74 @@
+Q: How does the Prophet Algorithm differ from an LSTM?
+A: The Prophet algorithm and LSTM (Long Short-Term Memory) are both popular methods for time series forecasting, 
+but they differ in several ways.
+
+Model Architecture: LSTM is a type of neural network that has a more complex architecture than Prophet, 
+which is based on generalized additive models (GAMs). LSTM has a recurrent architecture with multiple 
+hidden layers that allows it to capture more complex temporal dependencies in the data, whereas Prophet 
+is a simpler model that fits a linear or logistic regression model to a set of seasonal and trend components.
+
+Input data: Prophet requires the input data to be in a specific format, with at least two columns: 
+ds (datetime) and y (numeric value), whereas LSTM can take in a variety of input formats, 
+such as sequences or time series data in tabular format.
+
+Scalability: Prophet is designed to work well with large datasets and is particularly effective when 
+the data has multiple seasonalities or is noisy. LSTM, on the other hand, can be computationally expensive 
+and may not be suitable for very large datasets.
+
+Interpretability: Prophet is designed to be easy to interpret, with clear visualization tools that allow 
+users to inspect the different components of the model, such as seasonality and trend. LSTM, however, 
+can be more difficult to interpret due to its more complex architecture.
+
+Training Time: Training an LSTM model typically takes longer than training a Prophet model due to its more 
+complex architecture and larger number of parameters.
+
+In summary, while both Prophet and LSTM are effective methods for time series forecasting, they differ in 
+their model architecture, input data format, scalability, interpretability, and training time. The choice 
+of which method to use will depend on the specific requirements of the task at hand.
+   
+
+Q: Why does an LSTM have poor performance against ARIMA and Prophet for Time Series?
+A: LSTMs require careful hyperparameter tuning in order to achieve good results. This can make it hard for the LSTM
+   to compete with ARIMA and Prophet without significant tuning. Additionally, LSTMs have significantly more parameters
+   compared to ARIMA and prophet. Say a LSTM has 228K, Prophet has 4, and ARIMA has 3. This means that LSTM can severely
+   overfit if the training set is too small, even if you apply regularization techniques (dropout etc.). ARIMA and Prophet
+   have much much fewer parameters and can handle small and large datasets. In summary, LSTMs require very large datasets
+   and very careful hyperparameter tuning in order to achieve good results and even then it is not a model specifically
+   taking time series data into account. ARIMA and Prophet can handle all dataset sizes and are more specialized for 
+   time series data. 
+
+Q: What is exponential smoothing and why is it used in Time Series Forecasting?
+A: Exponential smoothing is a popular time series forecasting method that uses a weighted average of 
+past observations to make predictions about future values. The weights assigned to each observation 
+decay exponentially as the observations get older, hence the name "exponential smoothing". The idea 
+behind exponential smoothing is that more recent observations are typically more relevant to future 
+predictions than older ones, and the method assigns greater weight to the more recent observations while
+still considering the historical trend.
+
+Exponential smoothing is used in time series forecasting because it is a simple yet effective 
+method for capturing the underlying trends and patterns in the data. It is particularly useful 
+when the data has a relatively small number of observations and when there is a consistent trend 
+or seasonal pattern in the data.
+
+Q: What is stationarity? What is seasonality? Why Is Stationarity Important in Time Series Forecasting?
+A: Stationarity is a property of a time series where the statistical properties of the series, 
+such as the mean and variance, remain constant over time. In other words, the distribution of the 
+data does not change over time. A stationary time series is easier to model and forecast because 
+the statistical properties are predictable and stable over time.
+
+Seasonality is a pattern in a time series where a specific trend repeats itself at regular intervals.
+For example, retail sales may have a seasonal pattern where sales increase during the holiday season 
+and decrease after the new year. Another example is temperature data where there is a seasonal pattern 
+of warmer temperatures in the summer and cooler temperatures in the winter.
+
+Stationarity is important in time series forecasting because many forecasting methods assume stationarity 
+in the data. For example, methods like ARIMA and exponential smoothing assume that the statistical properties 
+of the time series are constant over time. If the time series is not stationary, these methods may produce 
+inaccurate forecasts. In addition, non-stationary time series can make it difficult to identify underlying 
+patterns in the data, which can lead to unreliable forecasts.
+
+Q: How is seasonality different from cyclicality? Fill in the blanks:
+A: __seasonality_ is predictable, whereas _cyclicality__ is not.
+   Additionally, cyclicality has no fixed period and the duration of a cycle can fluctuate, aka
+   the length of the current cycle is not known beforehand. Seasonality on the other hand is 
+   unchanging(fixed and known) and associated with the calendar year.
