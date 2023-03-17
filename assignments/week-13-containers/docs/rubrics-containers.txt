@@ -1,0 +1,29 @@
+Q: What does it mean to create a Docker image and why do we use Docker images
+A: To create a Docker image is to create a read-only template that contains a set of instructions 
+   for creating a container that can run on the Docker platform. We use them because it is a 
+   convenient way to package up applications (code,runtime,system tools, system libraries, settings) 
+   and preconfigured server environments, which can be deployed (as a container) on any system that 
+   has the Docker platform installed. 
+
+Q: Please explain what is the difference from a Container vs a Virtual Machine?
+A: 
+
+	Docker	Virtual Machines (VMs)
+Boot-Time - Boots in a few seconds.	It takes a few minutes for VMs to boot.
+Runs on	- Dockers make use of the execution engine.	
+            VMs make use of the hypervisor.
+Memory Efficiency - No space is needed to virtualize, hence less memory. 	
+                    Requires entire OS to be loaded before starting the surface, so less efficient. 
+Isolation - Prone to adversities as no provisions for isolation systems.	
+            Interference possibility is minimum because of the efficient isolation mechanism.
+Deployment - Deploying is easy as only a single image, containerized can be used across all platforms. 	
+            Deployment is comparatively lengthy as separate instances are responsible for execution.
+Usage - Docker has a complex usage mechanism consisting of both third party and docker managed tools.	
+        Tools are easy to use and simpler to work with. 
+
+Q: What are 5 examples of container orchestration tools (please list tools)?
+A: Docker Swarm, Kubernetes, Redhat OpenShift, Apache Mesos, Amazon Elastic Kubernetes Service (Amazon EKS)
+
+Q: How does a Docker image differ from a Docker container?
+A: A Docker image is the read-only template that contains a set of instructions for creating a container. 
+   A container is what is created when docker builds a docker image, a container is launched from an image
