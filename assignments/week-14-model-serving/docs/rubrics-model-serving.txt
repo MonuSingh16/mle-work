@@ -1,0 +1,35 @@
+Q: What are 3 advantages of deploying using Model Serving methods Vs. deploying on GitHub Pages or HuggingFace for free?
+A: Three advantages to deploying using model serving methods are finer control over traffic management to process requests
+   concurrently, ability to do shadow mode deployment (run the inference but don't return the result to the customer) 
+   to test a new model, and a better ability to ensure consistent SLAs for model serving. In general, model serving 
+   methods all the practitioner more control over exactly how the ML stack is deployed, monitored, retrained, and its
+   general quality of service.
+
+Q: What is ML model deployment?
+A: Model deployment is a process where you make a model usable via a served application and also involves
+   resource management, model monitoring, operations statistics, and handling model drifts.
+   
+   MLOPs also involves making sure it is in good running condition through the span of its lifetime
+   inside the application, including any updates that are required over time.
+
+Q: What is Causal Inference and How Does It Work?
+A: Causal Inference is the process of analyzing the response of an effect variable when the cause of the effect variable
+   is changed. if we change the cause of something, how does it impact the effect? From that, using 
+   causal inference we can determine causality behind an event.
+   
+   There are many methods but important one is A/B tests or randomized controlled trials(RCTs).
+   In this method we split examples into two groups: treatment and control. The treatment group gets the changed cause (treatment)
+   while the control group stays the same. The effect of the treatment is then observed.  ML techniques for casual inference
+   aren't exactly this but work of a similar principle. 
+   
+   LIME for example perturbs the input and observes the changes in inference outcome to see what causal 
+   relationships exist between variables in a model.
+
+Q: What is serverless deployment and how its compared with deployment on server?
+A: Serverless deployment is a development model build for creating and running applications with the need for server management.
+   The servers are provisioned, maintained and scaled by a third-party cloud provider, so developers just need to write and 
+   deploy their code. In core principles, a serverless deployment is based on two key components: Function as a Service (FaaS)
+   . Hence the servers are abstracted or hidden from the user. 
+ 
+   When compared to a server-based deployment, First, they have no fixed costs
+   and you only pay for what you use. Second, it scales on-demand rather than a manual upgrade process. 
